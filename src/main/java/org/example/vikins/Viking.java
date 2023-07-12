@@ -1,16 +1,12 @@
-package org.example.saxon;
+package org.example.vikins;
 
 import org.example.soldier.Soldier;
 
-public class Saxon extends Soldier {
+public class Viking extends Soldier {
     public String name;
     public String msg;
 
-    public Saxon(int health, int strength) {
-        super(health, strength);
-    }
-
-    public Saxon(String name, int health, int strength) {
+    public Viking(String name, int health,int strength) {
         super(health, strength);
         this.name = name;
     }
