@@ -3,32 +3,48 @@ package org.example.saxon;
 import org.example.soldier.Soldier;
 
 public class Saxon extends Soldier {
-    public String name;
-    public String msg;
+
+    int health;
+
+    int strength;
+
+    String msg;
 
     public Saxon(int health, int strength) {
         super(health, strength);
+        this.health = health;
+        this.strength = strength;
     }
 
-    public Saxon(String name, int health, int strength) {
-        super(health, strength);
-        this.name = name;
+    public int attack() {
+        return this.strength;
     }
 
-    public void receiveDamage(int damage) {
+    public String receiveDamage(int damage) {
         this.health -= damage;
         if (this.health > 0) {
-            this.msg = this.name + " has received " + damage + " points of damage";
+            return "A Saxon has received " + damage + " points of damage";
         } else {
-            this.msg = this.name + " has died in act of combat";
+            return "A Saxon has died in combat";
         }
-    }
 
-    public String battleCry() {
-        return "Odin Owns You All!";
-    }
 
-    public String getMsg() {
+}
+    public int getHealth() {
+        return health;
+    }
+    public String getMsg(){
         return this.msg;
     }
+
+    public void setHealth(int i) {
+        this.health = i;
+    }
+
+    public int getStrength() {
+        this.strength = strength;
+        return 0;
+    }
 }
+
+
