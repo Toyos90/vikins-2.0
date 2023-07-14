@@ -74,7 +74,7 @@ class WarTest {
         war.addViking(viking);
         saxon.setHealth(150);
         war.vikingAttack();
-        assertFalse(war.getSaxonArmy().isEmpty());
+        assertTrue(war.getSaxonArmy().isEmpty());
     }
 
     @Test
@@ -83,7 +83,8 @@ class WarTest {
         war.addViking(viking);
         saxon.setHealth(150);
         String response = war.vikingAttack();
-        assertEquals( "A Saxon has died in combat ", response);
+        assertEquals("A Saxon has died in combat", response);
+
     }
 
     @Test

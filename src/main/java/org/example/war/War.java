@@ -39,27 +39,15 @@ public class War {
     }
 
     public String saxonAttack() {
-        int randomSaxonIndex = (int) Math.floor(Math.random() * this.saxonArmy.size());
-        Saxon randomSaxon = this.saxonArmy.get(randomSaxonIndex);
-        int randomVikingIndex = (int) Math.floor(Math.random() * this.vikingArmy.size());
-        Viking randomViking = this.vikingArmy.get(randomVikingIndex);
+        Saxon firstSaxon = this.saxonArmy.get(0);
+        Viking firstViking = this.vikingArmy.get(0);
 
-        String result = randomViking.receiveDamage(randomSaxon.attack());
+        String result = firstViking.receiveDamage(firstSaxon.attack());
 
-        if (randomViking.getHealth() <= 0) {
-            this.vikingArmy.remove(randomVikingIndex);
+        if (firstViking.getHealth() <= 0) {
+            this.vikingArmy.remove(0);
         }
 
         return result;
-    }
-
-    public String showStatus() {
-        if (this.saxonArmy.size() == 0) {
-            return "¡Los vikingos han ganado la guerra del siglo!";
-        } else if (this.vikingArmy.size() == 0) {
-            return "¡Los sajones han luchado por sus vidas y sobrevivido otro día!";
-        } else {
-            return "¡La guerra continúa!";
-        }
     }
 }

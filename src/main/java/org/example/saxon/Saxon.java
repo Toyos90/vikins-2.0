@@ -42,8 +42,7 @@ public class Saxon extends Soldier {
     }
 
     public int getStrength() {
-        this.strength = strength;
-        return 0;
+        return this.strength;
     }
 }
 
